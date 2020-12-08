@@ -3,6 +3,7 @@ const form = document.querySelector(".js-form"),
     input = document.querySelector("input"),
     greeting = document.querySelector(".js-greetting");
 
+//이 녀석은 왜 대문자이며 뭐지?
 const USER_LS = "currentUser",
     SHOWING_ON = "showing";
 
@@ -34,11 +35,11 @@ function paintGreetting(text){
 function loadName(){
     const currentUser = localStorage.getItem(USER_LS);
     if(currentUser == null){
-        //사람이 없을 때
+        //사람이 저장소에 없을 때
         askForName();
     }
     else{
-        //사람이 있을 때
+        //사람이 저장소에 있을 때
         paintGreetting(currentUser);
     }
 }

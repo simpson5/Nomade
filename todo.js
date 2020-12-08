@@ -9,8 +9,22 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 //????
 const TODOS_LS = "toDos";
 
+//forEach가 function을 실행하는 것 같이 각각의 item과 같이 실행
+
 //배열 추가
-const toDos = [];
+let toDos = [];
+
+//배열 삭제 버튼 추가
+function deleteToDo(event){
+ const btn = event.target; //버튼의 타겟!
+ const li = btn.parentNode; //타겟의 속성? 아이디?
+ toDoList.removeChild(li); //li라는 아이디를 가진자를 제거한다!
+ const cleanToDos = toDos.filter(function filterFn(toDo){
+    return toDo.id !== parseInt(li.id);
+});
+ toDos = cleanToDos;
+ saveToDos();
+}
 
 //자바 스크립에 localstorage는 데이터 저장 못함
 //오로지 String 만 가능
@@ -25,6 +39,7 @@ function paintToDo(text){
     const span = document.createElement("span");
     const newId = toDos.length +1
     delBtn.innerHTML = "❌";
+    delBtn.addEventListener("click",deleteToDo);
     span.innerText =newId+":" + text;
     //자신을 부모로 자식을 추가
     li.appendChild(span);
