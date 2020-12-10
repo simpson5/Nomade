@@ -1,4 +1,5 @@
-const weather = document.querySelector(".js-weather");
+//const weather = document.querySelector(".js-weather");
+const weather = document.querySelector("span");
 
 //API 다른 서버로부터 손쉽게 데이터를 가져올 수 있는 수단
 const API_KEY = "5b797d601f468d4d154bda49ccb5fb65";
@@ -14,7 +15,7 @@ function getWeather(lat, lng){
     .then(function(json){
         const temperature = json.main.temp;
         const place = json.name;
-        weather.innerText = `와이?`;//`${temperature} @ ${place}`;
+        weather.innerText = `${temperature} @ ${place}`;
     });
 }
 
