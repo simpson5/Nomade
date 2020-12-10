@@ -10,7 +10,7 @@ function getTime(){
     const hours = date.getHours();
     const seconds = date.getSeconds();
     //삼항연산자
-    clcokTitle.innerText =`${hours < 10 ? `${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ?  `0${seconds}` : seconds}`;
+    clcokTitle.innerText =`호호호 ${hours < 10 ? `${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ?  `0${seconds}` : seconds}`;
 }
 
 function init(){
